@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="TARAI is a new brand from the UAE. Coming soon.">
+<title>TARAI · Coming soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@500&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: one quiet screen. Wordmark top, message and sign-up in a single column, a patterned sand panel beside it on wide screens. */
+:root{
+  --sand:#FAF6F0; --tile:#EFE5D6; --line:#E6DACA; --ink:#2B1D14; --muted:#6B5440; --red:#A3241B; --white:#FFFFFF;
+  --display:'DM Serif Display', Georgia, serif; --body:'Tajawal', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.page{min-height:100%;max-width:1200px;margin:0 auto;padding-inline:20px;padding-block:20px 28px;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Jost','Futura','Century Gothic',sans-serif;font-weight:500;font-size:26px;letter-spacing:.32em;padding-inline-start:.32em;line-height:1;display:inline-flex;flex-direction:column;align-items:center;gap:8px;direction:ltr}
+.logo::after{content:'';width:36px;height:2.5px;border-radius:2px;background:var(--red)}
+.main{flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding-block:24px}
+.copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px;max-width:560px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.06;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--muted);font-size:18px;max-width:34em}
+form{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+label{font-weight:500;font-size:15px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+input[type="email"]{flex:1 1 240px;min-width:0;min-height:50px;padding:0 18px;border:1px solid #D9CAB5;border-radius:999px;background:var(--white)}
+.go{min-height:50px;padding:0 28px;border:0;border-radius:999px;background:var(--red);color:var(--white);font-weight:700;cursor:pointer}
+.go:hover{background:#861D16}
+.thanks{font-weight:500;color:var(--ink);background:var(--tile);border-radius:14px;padding:12px 16px;margin:0}
+.small{font-size:14px;color:var(--muted)}
+.panel{flex:1 1 360px;min-width:0;max-width:100%;aspect-ratio:4/5;max-height:560px;border-radius:28px;background-color:var(--tile);position:relative;overflow:hidden;
+  background-image:repeating-linear-gradient(45deg,rgba(163,36,27,.07) 0 2px,transparent 2px 16px),repeating-linear-gradient(-45deg,rgba(163,36,27,.07) 0 2px,transparent 2px 16px)}
+.panel svg{position:absolute;inset-inline:0;bottom:0;width:100%;height:auto}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:16px}
+.sel{user-select:all}
+@media (max-width:720px){.panel{aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="top">
+    <span class="logo">TARAI</span>
+  </header>
+
+  <main class="main">
+    <section class="copy">
+      <span class="eyebrow">Coming soon</span>
+      <h1>Something thoughtful is on its way.</h1>
+      <p class="lead">TARAI is a new brand from the UAE. We're putting the final touches on our first collection: pieces designed with care, made to be used every day and kept for years.</p>
+      <!-- Sign-up form: paste your Formspree form ID below (data-formspree="xxxxxxx"). While it is empty, the form is hidden and the email address shows instead. -->
+      <form id="notify" name="notify" method="POST" data-formspree="">
+        <label for="email">Be the first to know when we open.</label>
+        <div class="row">
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+          <button class="go" type="submit">Notify me</button>
+        </div>
+        <p class="small">One email when we launch. No spam.</p>
+      </form>
+      <p class="small" id="fallback" hidden>Want to hear when we open? Email <span class="sel">admin@taraistore.com</span>.</p>
+      <p class="thanks" id="thanks" hidden>Thank you. We'll email you the day we open.</p>
+    </section>
+    <div class="panel" aria-hidden="true">
+      <svg viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 110 C 70 90, 110 60, 180 70 S 300 120, 400 84 L 400 160 L 0 160 Z" fill="#E6D3B8"></path><path d="M0 132 C 90 112, 160 104, 240 118 S 350 140, 400 122 L 400 160 L 0 160 Z" fill="#DCC4A3"></path></svg>
+    </div>
+  </main>
+
+  <footer class="foot small">
+    <span class="sel">admin@taraistore.com</span>
+    <span>© 2026 TARAI · Designed in the UAE</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('notify');
+  var id=form.getAttribute('data-formspree');
+  if(!id){form.hidden=true;document.getElementById('fallback').hidden=false;return}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var done=function(){form.hidden=true;document.getElementById('thanks').hidden=false};
+    fetch('https://formspree.io/f/'+id,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}).then(done,done);
+  });
+})();
+</script>
+
+</body>
+</html>
